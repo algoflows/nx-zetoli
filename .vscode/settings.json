@@ -1,0 +1,12 @@
+{
+  "deno.enablePaths": [
+    "apps/clients/deno-fresh",
+    "apps/clients/fresh-site",
+    "apps/services/user",
+    "apps/services/products",
+    "apps/services/users"
+  ],
+  "deno.unstable": true,
+  "deno.importMap": "./import_map.json",
+  "deno.config": "./deno.json"
+}

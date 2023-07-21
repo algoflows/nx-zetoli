@@ -1,0 +1,39 @@
+{
+  "name": "services-products",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/services/products/src",
+  "targets": {
+    "build": {
+      "executor": "@nx/deno:emit",
+      "outputs": ["dist/apps/services/products"],
+      "options": {
+        "main": "apps/services/products/src/main.ts",
+        "outputFile": "dist/apps/services/products/main.js",
+        "denoConfig": "apps/services/products/deno.json"
+      }
+    },
+    "serve": {
+      "executor": "@nx/deno:run",
+      "options": {
+        "buildTarget": "services-products:build",
+        "watch": true
+      }
+    },
+    "test": {
+      "executor": "@nx/deno:test",
+      "outputs": ["coverage/apps/services/products"],
+      "options": {
+        "coverageDirectory": "coverage/apps/services/products",
+        "denoConfig": "apps/services/products/deno.json"
+      }
+    },
+    "lint": {
+      "executor": "@nx/deno:lint",
+      "options": {
+        "denoConfig": "apps/services/products/deno.json"
+      }
+    }
+  },
+  "tags": []
+}

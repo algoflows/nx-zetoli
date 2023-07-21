@@ -1,0 +1,39 @@
+{
+  "name": "services-users",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/services/users/src",
+  "targets": {
+    "build": {
+      "executor": "@nx/deno:emit",
+      "outputs": ["dist/apps/services/users"],
+      "options": {
+        "main": "apps/services/users/src/main.ts",
+        "outputFile": "dist/apps/services/users/main.js",
+        "denoConfig": "apps/services/users/deno.json"
+      }
+    },
+    "serve": {
+      "executor": "@nx/deno:run",
+      "options": {
+        "buildTarget": "services-users:build",
+        "watch": true
+      }
+    },
+    "test": {
+      "executor": "@nx/deno:test",
+      "outputs": ["coverage/apps/services/users"],
+      "options": {
+        "coverageDirectory": "coverage/apps/services/users",
+        "denoConfig": "apps/services/users/deno.json"
+      }
+    },
+    "lint": {
+      "executor": "@nx/deno:lint",
+      "options": {
+        "denoConfig": "apps/services/users/deno.json"
+      }
+    }
+  },
+  "tags": []
+}
