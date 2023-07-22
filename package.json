@@ -2,7 +2,9 @@
   "name": "@zetoli/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "preinstall": "npx only-allow pnpm"
+  },
   "private": true,
   "devDependencies": {
     "@nx/deno": "^16.4.0",
