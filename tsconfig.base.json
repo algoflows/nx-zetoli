@@ -15,7 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@zetoli/shared/models": ["libs/shared/models/src/index.ts"]
+      "@zemili/shared/models": ["libs/shared/models/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
