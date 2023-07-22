@@ -1,15 +1,13 @@
 import { Application, Router } from 'https://deno.land/x/oak@v11.1.0/mod.ts';
-import { Product } from '@zetoli/shared/models';
 
 const router = new Router();
 
 router.get('/', (ctx) => {
-  const product: Product = {};
   ctx.response.redirect('/api');
 });
 
 router.get('/api', (ctx) => {
-  ctx.response.body = { message: 'Hello services-products' };
+  ctx.response.body = { message: 'Hello services-backend' };
   ctx.response.type = 'text/json';
 });
 

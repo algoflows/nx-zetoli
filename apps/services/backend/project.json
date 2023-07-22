@@ -1,0 +1,39 @@
+{
+  "name": "services-backend",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/services/backend/src",
+  "targets": {
+    "build": {
+      "executor": "@nx/deno:emit",
+      "outputs": ["dist/apps/services/backend"],
+      "options": {
+        "main": "apps/services/backend/src/main.ts",
+        "outputFile": "dist/apps/services/backend/main.js",
+        "denoConfig": "apps/services/backend/deno.json"
+      }
+    },
+    "serve": {
+      "executor": "@nx/deno:run",
+      "options": {
+        "buildTarget": "services-backend:build",
+        "watch": true
+      }
+    },
+    "test": {
+      "executor": "@nx/deno:test",
+      "outputs": ["coverage/apps/services/backend"],
+      "options": {
+        "coverageDirectory": "coverage/apps/services/backend",
+        "denoConfig": "apps/services/backend/deno.json"
+      }
+    },
+    "lint": {
+      "executor": "@nx/deno:lint",
+      "options": {
+        "denoConfig": "apps/services/backend/deno.json"
+      }
+    }
+  },
+  "tags": []
+}

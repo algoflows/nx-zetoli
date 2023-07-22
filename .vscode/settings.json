@@ -4,7 +4,8 @@
     "apps/clients/fresh-site",
     "apps/services/user",
     "apps/services/products",
-    "apps/services/users"
+    "apps/services/users",
+    "apps/services/backend"
   ],
   "deno.unstable": true,
   "deno.importMap": "./import_map.json",
